@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Card, Spin , Image} from "antd"
+import { Card, Spin ,Button, Typography, Image} from "antd"
 
 
 export default function MyApp() {
@@ -26,7 +26,7 @@ export default function MyApp() {
 
     return (
         <main>
-            <h1>Data Coming from backend</h1>
+            <Typography.Title className="text-center">Data Coming from backend</Typography.Title>
             {
 
                 isLoading ? <Spin size="large" /> :
@@ -59,12 +59,14 @@ export default function MyApp() {
 
 function MyCard({ product }) {
     return (
-        <Card cover={<Image src={product?.image} alt="product image" width={200} height={200}/>} className="w-1/5 m-4">
-            <p>{product?.title}</p>
+        <Card cover={<Image src={product?.image} alt="product image" width={200} height={200}/>} className="w-1/4 m-4">
+            <Typography.Title level={3}>{product?.title}</Typography.Title>
             <p>{product?.description}</p>
             <p>NGN {product?.price}</p>
+            <Button>Buy Now</Button>
 
         </Card>
     )
+
 
 }
