@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Card, Spin } from "antd"
+import { Card, Spin , Image} from "antd"
 
 
 export default function MyApp() {
@@ -59,7 +59,7 @@ export default function MyApp() {
 
 function MyCard({ product }) {
     return (
-        <Card cover={<img src={product?.image} alt="product image" />} className="w-1/5 m-4">
+        <Card cover={<Image src={product?.image} alt="product image" width={200} height={200}/>} className="w-1/5 m-4">
             <p>{product?.title}</p>
             <p>{product?.description}</p>
             <p>NGN {product?.price}</p>
